@@ -1,0 +1,19 @@
+services:
+  python:
+    build: .
+    volumes:
+      - .:/main
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - 4000:3306
