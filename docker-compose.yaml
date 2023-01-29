@@ -14,6 +14,6 @@ services:
       MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: example
     volumes:
-      - .:/docker-entrypoint-initdb.d
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     ports:
       - 4000:3306
