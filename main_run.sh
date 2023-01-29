@@ -5,6 +5,5 @@ until mysqladmin ping -h db --silent; do
   sleep 2
 done
 
-echo " go app is started!"
 
 python3 main.py
